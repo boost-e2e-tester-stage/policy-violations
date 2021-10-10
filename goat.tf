@@ -1,5 +1,5 @@
 
-# Goat.tf version 0.5033572104999484
+# Goat.tf version 0.1673201500379038
 resource "google_storage_bucket" "terragoat_website" {
 name          = "terragot-${var.environment}"
 force_destroy = true
@@ -18,8 +18,8 @@ log_bucket = "secret.example.com-access-logs"
 log_object_prefix =  "log/secrets-"
 }
 }
-resource "google_storage_bucket_iam_binding" "allow_public_read" {
+resource "google_storage_bucket_iam_binding" "allow_read_for_one_member" {
 bucket  = google_storage_bucket.terragoat_website.id
-members = ["allUsers"]
+members = ["user:jane@example.com"]
 role    = "roles/storage.objectViewer"
 }
