@@ -1,0 +1,10 @@
+{
+    "violation-policy": [
+        {
+            "class": "cloud-misconfiguration",
+            "rules": {
+                "gcp-gcs-anon-or-public": "block"
+            }
+        }
+    ]
+}
